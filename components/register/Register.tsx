@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Register = () => {
   return (
     <div className="w-full max-w-md mx-auto mt-10 bg-white shadow-md rounded-lg p-6">
@@ -74,17 +76,21 @@ const Register = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-2 mt-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600"
+          className="w-full py-2 mt-4 bg-black text-white font-medium rounded-lg "
         >
           Register
         </button>
 
         {/* Additional Options */}
-        <div className="mt-4 text-sm text-center text-gray-600">
+        <div className="mt-4 text-md text-center text-gray-600">
           Already have an account?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <Link
+            href="#"
+            aria-label="go to login page"
+            className="text-blue-500 hover:underline"
+          >
             Login
-          </a>
+          </Link>
         </div>
       </form>
     </div>

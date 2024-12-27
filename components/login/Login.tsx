@@ -1,3 +1,6 @@
+import Link from "next/link";
+import SocialLogin from "./SocialLogin";
+
 const Login = () => {
   return (
     <div className="w-full max-w-md mx-auto mt-10 bg-white shadow-md rounded-lg p-6">
@@ -40,17 +43,22 @@ const Login = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-2 mt-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600"
+          className="w-full py-2 mt-4 bg-black text-white font-medium rounded-lg "
         >
           Login
         </button>
+        <SocialLogin />
 
         {/* Additional Options */}
-        <div className="mt-4 text-sm text-center text-gray-600">
+        <div className="mt-4 text-md text-center text-gray-600">
           Don't have an account?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <Link
+            href="/register"
+            aria-label="go to register"
+            className="text-blue-500 hover:underline"
+          >
             Register
-          </a>
+          </Link>
         </div>
       </form>
     </div>
