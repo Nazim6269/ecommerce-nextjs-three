@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
@@ -5,18 +8,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-8">
             <div className="shrink-0">
-              <a href="#" title="" className="">
-                <img
-                  className="block w-auto h-8 dark:hidden"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
-                  alt=""
+              <Link href="/" aria-label="go to  home" title="" className="">
+                <Image
+                  className="block w-auto"
+                  src="/adidas.png"
+                  width={82}
+                  height={94}
+                  alt="primary logo"
                 />
-                <img
-                  className="hidden w-auto h-8 dark:block"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
-                  alt=""
-                />
-              </a>
+              </Link>
             </div>
 
             <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
@@ -30,13 +30,14 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="shrink-0">
-                <a
+                <Link
                   href="#"
+                  aria-label="go to all product list"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
-                  Best Sellers
-                </a>
+                  All Products
+                </Link>
               </li>
               <li className="shrink-0">
                 <a

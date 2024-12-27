@@ -85,7 +85,7 @@ const Register = () => {
         <div className="mt-4 text-md text-center text-gray-600">
           Already have an account?{" "}
           <Link
-            href="#"
+            href="/login"
             aria-label="go to login page"
             className="text-blue-500 hover:underline"
           >
