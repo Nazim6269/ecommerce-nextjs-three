@@ -1,7 +1,10 @@
+import { auth } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
+import Logout from "../login/Logout";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const session = await auth();
   return (
     <nav className="bg-white dark:bg-gray-800 antialiased">
       <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
@@ -21,13 +24,14 @@ const Navbar = () => {
 
             <ul className="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
               <li>
-                <a
-                  href="#"
+                <Link
+                  aria-label="go to home"
+                  href="/"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="shrink-0">
                 <Link
@@ -70,6 +74,18 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center lg:space-x-2">
+            {session?.user ? (
+              <Logout />
+            ) : (
+              <Link
+                href={"login"}
+                aria-label="go to login"
+                className="inline-flex items-center bg-black text-white rounded-sm justify-center p-2  capitalize text-sm font-medium leading-none  dark:text-white"
+              >
+                login
+              </Link>
+            )}
+
             <button
               id="myCartDropdownButton1"
               data-dropdown-toggle="myCartDropdown1"
@@ -113,7 +129,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-
+            {/* cart dropdown */}
             <div
               id="myCartDropdown1"
               className="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800"

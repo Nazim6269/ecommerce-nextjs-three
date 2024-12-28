@@ -1,8 +1,9 @@
 import Google from "next-auth/providers/google";
-import { googleClientId, googleSecret } from "./secret";
+import { fbId, fbSecret, googleClientId, googleSecret } from "./secret";
 import NextAuth from "next-auth";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import client from "./lib/db";
+import Facebook from "next-auth/providers/facebook";
 
 const authoptions: any = {
   adapter: MongoDBAdapter(client),
@@ -10,13 +11,19 @@ const authoptions: any = {
     strategy: "jwt",
   },
   providers: [
+    Facebook({
+      clientId: fbId,
+      clientSecret: fbSecret,
+    }),
     Google({
       clientId: googleClientId,
       clientSecret: googleSecret,
       authorization: {
-        prompt: "consent",
-        access_type: "offline",
-        response_type: "code",
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
       },
     }),
   ],
