@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.7.4",
+    "@wix/sdk": "^1.15.7",
+    "@wix/stores": "^1.0.326",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.2",
     "next": "15.1.0",

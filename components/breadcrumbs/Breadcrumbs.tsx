@@ -2,7 +2,7 @@ const Breadcrumbs = () => {
   return (
     // <!-- Breadcrumb -->
     <nav
-      className="justify-between px-4 py-3 text-gray-700 border border-gray-200 rounded-lg sm:flex sm:px-5 bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+      className="justify-between px-4 py-3 text-gray-700  border-gray-200 rounded-lg sm:flex sm:px-5 bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
       aria-label="Breadcrumb"
     >
       <ol className="inline-flex items-center mb-3 space-x-1 md:space-x-2 rtl:space-x-reverse sm:mb-0">

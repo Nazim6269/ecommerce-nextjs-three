@@ -35,7 +35,7 @@ const Navbar = async () => {
               </li>
               <li className="shrink-0">
                 <Link
-                  href="#"
+                  href="/products"
                   aria-label="go to all product list"
                   title=""
                   className="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500"
