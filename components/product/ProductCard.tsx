@@ -4,7 +4,6 @@ import React from "react";
 
 export type ProductCardType = {
   name: string;
-  category: string;
   _id: string;
   description: string;
   priceData: {
@@ -21,11 +20,15 @@ export type ProductCardType = {
   };
 };
 
-const ProductCard: React.FC<{ product: ProductCardType }> = ({ product }) => {
+export type ProductCardProps = {
+  product: ProductCardType;
+  category: string;
+};
+
+const ProductCard: React.FC<ProductCardProps> = ({ product, category }) => {
   const {
     name,
     description,
-    category,
     _id,
     media: {
       mainMedia: {
@@ -42,7 +45,7 @@ const ProductCard: React.FC<{ product: ProductCardType }> = ({ product }) => {
           <Image
             className="mx-auto h-full "
             src={url}
-            width={460}
+            width={360}
             height={145}
             alt="thumbnail image"
           />
