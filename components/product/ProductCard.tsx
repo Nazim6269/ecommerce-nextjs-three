@@ -1,15 +1,50 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductCard = () => {
+export type ProductCardType = {
+  name: string;
+  category: string;
+  _id: string;
+  description: string;
+  priceData: {
+    currency: string;
+    price: number;
+    discountedPrice: number;
+  };
+  media: {
+    mainMedia: {
+      thumbnail: {
+        url: string;
+      };
+    };
+  };
+};
+
+const ProductCard: React.FC<{ product: ProductCardType }> = ({ product }) => {
+  const {
+    name,
+    description,
+    category,
+    _id,
+    media: {
+      mainMedia: {
+        thumbnail: { url },
+      },
+    },
+    priceData: { currency, price, discountedPrice },
+  } = product;
+
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       <div className="h-56 w-full">
-        <Link aria-label="go to" href="#">
-          <img
-            className="mx-auto h-full dark:hidden"
-            src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
-            alt=""
+        <Link aria-label="go to" href={`/products/${category}/${_id}`}>
+          <Image
+            className="mx-auto h-full "
+            src={url}
+            width={460}
+            height={145}
+            alt="thumbnail image"
           />
         </Link>
       </div>
@@ -97,7 +132,7 @@ const ProductCard = () => {
           href="#"
           className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white"
         >
-          Apple iMac 27", 1TB HDD, Retina 5K Display, M3 Max
+          {name}
         </Link>
 
         <div className="mt-2 flex items-center gap-2">
@@ -206,7 +241,7 @@ const ProductCard = () => {
 
         <div className="mt-4 flex items-center justify-between gap-4">
           <p className="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">
-            $1,699
+            {currency}-{price}
           </p>
 
           <button

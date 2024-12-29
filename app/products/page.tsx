@@ -1,12 +1,26 @@
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import SortingBar from "@/components/filteringBar/SortingBar";
-import ProductCard from "@/components/product/ProductCard";
+import ProductCard, { ProductCardType } from "@/components/product/ProductCard";
+import { Metadata } from "next";
 import React from "react";
 
-const ProductsPage = async () => {
-  const products = await fetch("http://localhost:3000/api/products");
-  const data = await products.json();
-  console.log(data);
+export const metadata: Metadata = {
+  title: "Products",
+  description: "This are all products",
+};
+
+const ProductsPage = async ({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) => {
+  const categoryParams = (await searchParams?.category) || "all-products";
+  const res = await fetch(
+    `http://localhost:3000/api/products?category=${categoryParams}`
+  );
+  let products = await res.json();
+  products = products._items;
+
   return (
     <section className="bg-gray-50 antialiased dark:bg-gray-900 ">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
@@ -21,10 +35,9 @@ const ProductsPage = async () => {
           <SortingBar />
         </div>
         <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products?.map((product: ProductCardType) => (
+            <ProductCard product={product} key={product._id} />
+          ))}
         </div>
         <div className="w-full text-center">
           <button
