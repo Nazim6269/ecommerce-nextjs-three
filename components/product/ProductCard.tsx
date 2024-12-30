@@ -13,7 +13,7 @@ export type ProductCardType = {
   };
   media: {
     mainMedia: {
-      thumbnail: {
+      image: {
         url: string;
       };
     };
@@ -22,7 +22,7 @@ export type ProductCardType = {
 
 export type ProductCardProps = {
   product: ProductCardType;
-  category: string;
+  category?: string;
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, category }) => {
@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, category }) => {
     _id,
     media: {
       mainMedia: {
-        thumbnail: { url },
+        image: { url },
       },
     },
     priceData: { currency, price, discountedPrice },
@@ -44,9 +44,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, category }) => {
         <Link aria-label="go to" href={`/products/${category}/${_id}`}>
           <Image
             className="mx-auto h-full "
-            src={url}
-            width={360}
-            height={145}
+            src={url || "/fallback.png"}
+            width={340}
+            height={245}
             alt="thumbnail image"
           />
         </Link>
