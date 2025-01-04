@@ -4,6 +4,7 @@ import Link from "next/link";
 const Categories = async () => {
   const res = await fetch("http://localhost:3000/api/categories");
   const categories = await res.json();
+  categories?._items.shift();
 
   return (
     <section className="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-16">

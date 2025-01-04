@@ -10,8 +10,8 @@ export const GET = async (req: NextRequest) => {
       .queryProducts()
       .eq("slug", params)
       .find();
-
-    const product = data?._items[0] || null;
+    console.log(data, "routes");
+    const product = data?.items[0] || null;
 
     return NextResponse.json(product, { status: 200 });
   } catch (error) {

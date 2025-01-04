@@ -732,7 +732,6 @@ const RepairProduct = () => {
                 <div className="flex items-center gap-8 p-6 sm:items-start lg:items-center">
                   <div>
                     <input
-                      checked
                       id="product3"
                       type="checkbox"
                       value=""

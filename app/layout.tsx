@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,8 +28,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  categories,
 }: Readonly<{
   children: React.ReactNode;
+  categories: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -37,6 +40,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        {categories ? categories : <h2>Not found</h2>}
         <Footer />
       </body>
     </html>

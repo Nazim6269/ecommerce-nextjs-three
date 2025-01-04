@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const ProductsPage = async ({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Record<string, string | undefined | undefined>;
 }) => {
   const categoryParams = (await searchParams?.category) || "all-products";
 
@@ -166,7 +166,7 @@ const ProductsPage = async ({
                         id="asus"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -218,7 +218,7 @@ const ProductsPage = async ({
                         id="atari"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -293,7 +293,7 @@ const ProductsPage = async ({
                         id="bose"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -345,7 +345,7 @@ const ProductsPage = async ({
                         id="brother"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -454,7 +454,7 @@ const ProductsPage = async ({
                         id="cisco"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -705,7 +705,7 @@ const ProductsPage = async ({
                         id="emi"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -763,7 +763,7 @@ const ProductsPage = async ({
                         id="fitbit"
                         type="checkbox"
                         value=""
-                        checked
+                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -935,7 +935,7 @@ const ProductsPage = async ({
                           type="radio"
                           value=""
                           name="list-radio"
-                          checked
+                          
                           className="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-primary-600"
                         />
                         <label
@@ -1031,7 +1031,7 @@ const ProductsPage = async ({
                           id="green"
                           type="checkbox"
                           value=""
-                          checked
+                          
                           className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
 
@@ -1066,7 +1066,7 @@ const ProductsPage = async ({
                           id="red"
                           type="checkbox"
                           value=""
-                          checked
+                          
                           className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
 
@@ -1222,7 +1222,7 @@ const ProductsPage = async ({
                           type="radio"
                           value=""
                           name="rating"
-                          checked
+                          
                           className="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
                         <label
@@ -1442,7 +1442,7 @@ const ProductsPage = async ({
                           id="1-1-5-kg"
                           type="checkbox"
                           value=""
-                          checked
+                          
                           className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
 
@@ -1522,11 +1522,11 @@ const ProductsPage = async ({
                         name="delivery"
                         value="delivery-usa"
                         className="peer hidden"
-                        checked
+                        
                       />
                       <label
                         htmlFor="delivery-usa"
-                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500 md:p-5"
+                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-:border-primary-600 peer-:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-:text-primary-500 md:p-5"
                       >
                         <div className="block">
                           <div className="w-full text-lg font-semibold">
@@ -1546,7 +1546,7 @@ const ProductsPage = async ({
                       />
                       <label
                         htmlFor="delivery-europe"
-                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500 md:p-5"
+                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-:border-primary-600 peer-:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-:text-primary-500 md:p-5"
                       >
                         <div className="block">
                           <div className="w-full text-lg font-semibold">
@@ -1563,11 +1563,11 @@ const ProductsPage = async ({
                         name="delivery"
                         value="delivery-asia"
                         className="peer hidden"
-                        checked
+                        
                       />
                       <label
                         htmlFor="delivery-asia"
-                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500 md:p-5"
+                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-:border-primary-600 peer-:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-:text-primary-500 md:p-5"
                       >
                         <div className="block">
                           <div className="w-full text-lg font-semibold">
@@ -1587,7 +1587,7 @@ const ProductsPage = async ({
                       />
                       <label
                         htmlFor="delivery-australia"
-                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-checked:border-primary-600 peer-checked:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-primary-500 md:p-5"
+                        className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-600 peer-:border-primary-600 peer-:text-primary-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-:text-primary-500 md:p-5"
                       >
                         <div className="block">
                           <div className="w-full text-lg font-semibold">

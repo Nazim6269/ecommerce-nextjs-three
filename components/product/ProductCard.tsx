@@ -28,14 +28,13 @@ export type ProductCardProps = {
 const ProductCard: React.FC<ProductCardProps> = ({ product, category }) => {
   const {
     name,
-    description,
     _id,
     media: {
       mainMedia: {
         image: { url },
       },
     },
-    priceData: { currency, price, discountedPrice },
+    priceData: { currency, price },
   } = product;
 
   return (
