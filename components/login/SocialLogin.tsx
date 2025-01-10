@@ -1,16 +1,17 @@
 "use client";
 
 import { signIn } from "next-auth/react";
-import React from "react";
 
 const SocialLogin = () => {
   const handleClick = async (provider: string) => {
     try {
-      const response = await signIn(provider, {
+      await signIn(provider, {
         callbackUrl: "http://localhost:3000/",
         redirect: false,
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="flex justify-between gap-2">

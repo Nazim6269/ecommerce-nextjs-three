@@ -1,14 +1,17 @@
 import ProductDetails from "@/components/productDetails/ProductDetails";
 import { Metadata } from "next";
-import React from "react";
+
+type Params = Promise<{
+  category: string;
+}>;
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: { category: string };
+  params: Params;
 }): Promise<Metadata> => {
-  const { category } = params;
-  console.log(category, "generatemetadata");
+  const resolvedParams = await params;
+  const { category } = resolvedParams;
   const res = await fetch(
     `http://localhost:3000/api/product?category=${category}`
   );
@@ -17,17 +20,13 @@ export const generateMetadata = async ({
   return { title: product.name, description: product.description };
 };
 
-const ProductsDetailsPage = async ({
-  params,
-}: {
-  params: { category: string };
-}) => {
-  const { category } = params;
+const ProductsDetailsPage = async ({ params }: { params: Params }) => {
+  const resolvedParams = await params;
+  const { category } = resolvedParams;
   const res = await fetch(
     `http://localhost:3000/api/product?category=${category}`
   );
   const product = await res.json();
-  console.log(product, "page");
 
   return (
     <section className="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased">

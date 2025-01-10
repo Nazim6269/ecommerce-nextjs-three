@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const NavbarBtn = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

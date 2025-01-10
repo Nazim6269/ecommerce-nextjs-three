@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ProductReview = () => {
   return (
     <>
@@ -489,12 +491,16 @@ const ProductReview = () => {
                 </p>
 
                 <div className="flex gap-2">
-                  <img
+                  <Image
+                    width={30}
+                    height={21}
                     className="h-32 w-20 rounded-lg object-cover"
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-photo-1.jpg"
                     alt=""
                   />
-                  <img
+                  <Image
+                    width={30}
+                    height={21}
                     className="h-32 w-20 rounded-lg object-cover"
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-photo-2.jpg"
                     alt=""

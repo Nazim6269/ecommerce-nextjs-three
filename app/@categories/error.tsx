@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 const CategoriesError = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">

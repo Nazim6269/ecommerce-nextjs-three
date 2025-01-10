@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const RepairProduct = () => {
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -100,7 +102,9 @@ const RepairProduct = () => {
               <span className="sr-only">Open user menu</span>
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center">
-                  <img
+                  <Image
+                    width={30}
+                    height={22}
                     src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                     className="mr-3 h-8 w-8 rounded-md"
                     alt="Bonnie avatar"
@@ -143,7 +147,9 @@ const RepairProduct = () => {
                 href="#"
                 className="flex items-center rounded px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
-                <img
+                <Image
+                  width={30}
+                  height={22}
                   src="https://flowbite.com/docs/images/logo.svg"
                   className="mr-3 h-8 w-8 rounded"
                   alt="Michael avatar"
@@ -619,12 +625,16 @@ const RepairProduct = () => {
                         href="#"
                         className="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="h-auto max-h-full w-full dark:hidden"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
                           alt="imac image"
                         />
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="hidden h-auto max-h-full w-full dark:block"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
                           alt="imac image"
@@ -684,12 +694,16 @@ const RepairProduct = () => {
                         href="#"
                         className="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="h-auto max-h-full w-full dark:hidden"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-light.svg"
                           alt="imac image"
                         />
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="hidden h-auto max-h-full w-full dark:block"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-dark.svg"
                           alt="imac image"
@@ -749,12 +763,16 @@ const RepairProduct = () => {
                         href="#"
                         className="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="h-auto max-h-full w-full dark:hidden"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-light.svg"
                           alt="imac image"
                         />
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="hidden h-auto max-h-full w-full dark:block"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-dark.svg"
                           alt="imac image"
@@ -814,12 +832,16 @@ const RepairProduct = () => {
                         href="#"
                         className="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="h-auto max-h-full w-full dark:hidden"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
                           alt="imac image"
                         />
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="hidden h-auto max-h-full w-full dark:block"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg"
                           alt="imac image"
@@ -878,12 +900,16 @@ const RepairProduct = () => {
                         href="#"
                         className="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="h-auto max-h-full w-full dark:hidden"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/xbox-light.svg"
                           alt="imac image"
                         />
-                        <img
+                        <Image
+                          width={30}
+                          height={22}
                           className="hidden h-auto max-h-full w-full dark:block"
                           src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/xbox-dark.svg"
                           alt="imac image"

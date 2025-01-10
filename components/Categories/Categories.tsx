@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+type CategoryItem = {
+  _id: string;
+  slug: string;
+  media: {
+    mainMedia: {
+      image: { url: string };
+    };
+  };
+  name: string;
+};
+
 const Categories = async () => {
   const res = await fetch("http://localhost:3000/api/categories");
   const categories = await res.json();
@@ -16,7 +27,7 @@ const Categories = async () => {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {categories?._items?.map((item: any) => (
+          {categories?._items?.map((item: CategoryItem) => (
             <Link
               key={item._id}
               href={`/products?category=${item.slug}`}

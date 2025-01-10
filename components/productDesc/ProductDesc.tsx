@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ProductDesc = () => {
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -7,12 +9,16 @@ const ProductDesc = () => {
             Product description
           </h2>
           <div className="my-8 xl:mb-16 xl:mt-12">
-            <img
+            <Image
+              width={140}
+              height={100}
               className="w-full dark:hidden"
               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-showcase.svg"
               alt=""
             />
-            <img
+            <Image
+              width={140}
+              height={100}
               className="hidden w-full dark:block"
               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-showcase-dark.svg"
               alt=""

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const RefundStatus = () => {
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -12,12 +14,16 @@ const RefundStatus = () => {
               href="#"
               className="mb-4 flex aspect-square h-14 w-14 shrink-0 items-center sm:mb-0"
             >
-              <img
+              <Image
+                width={21}
+                height={14}
                 className="h-auto max-h-full w-full dark:hidden"
                 src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
                 alt="imac image"
               />
-              <img
+              <Image
+                width={21}
+                height={14}
                 className="hidden h-auto max-h-full w-full dark:block"
                 src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
                 alt="imac image"

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PaymentForm = () => {
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
@@ -188,32 +190,44 @@ const PaymentForm = () => {
               </div>
 
               <div className="mt-6 flex items-center justify-center gap-8">
-                <img
+                <Image
+                  width={200}
+                  height={150}
                   className="h-8 w-auto dark:hidden"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/paypal.svg"
                   alt=""
                 />
-                <img
+                <Image
+                  width={200}
+                  height={150}
                   className="hidden h-8 w-auto dark:flex"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/paypal-dark.svg"
                   alt=""
                 />
-                <img
+                <Image
+                  width={200}
+                  height={150}
                   className="h-8 w-auto dark:hidden"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa.svg"
                   alt=""
                 />
-                <img
+                <Image
+                  width={200}
+                  height={150}
                   className="hidden h-8 w-auto dark:flex"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa-dark.svg"
                   alt=""
                 />
-                <img
+                <Image
+                  width={200}
+                  height={150}
                   className="h-8 w-auto dark:hidden"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard.svg"
                   alt=""
                 />
-                <img
+                <Image
+                  width={200}
+                  height={150}
                   className="hidden h-8 w-auto dark:flex"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/mastercard-dark.svg"
                   alt=""

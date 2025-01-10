@@ -2,7 +2,8 @@ import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import SortingBar from "@/components/filteringBar/SortingBar";
 import ProductCard, { ProductCardType } from "@/components/product/ProductCard";
 import { Metadata } from "next";
-import React from "react";
+
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export const metadata: Metadata = {
   title: "Products",
@@ -12,9 +13,13 @@ export const metadata: Metadata = {
 const ProductsPage = async ({
   searchParams,
 }: {
-  searchParams: Record<string, string | undefined | undefined>;
+  searchParams: SearchParams;
 }) => {
-  const categoryParams = (await searchParams?.category) || "all-products";
+  const resolvedParams = await searchParams;
+  const slugParam = resolvedParams.category;
+  const category = Array.isArray(slugParam) ? slugParam[0] : slugParam;
+
+  const categoryParams = category || "all-products";
 
   const res = await fetch(
     `http://localhost:3000/api/products?category=${categoryParams}`
@@ -166,7 +171,6 @@ const ProductsPage = async ({
                         id="asus"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -218,7 +222,6 @@ const ProductsPage = async ({
                         id="atari"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -293,7 +296,6 @@ const ProductsPage = async ({
                         id="bose"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -345,7 +347,6 @@ const ProductsPage = async ({
                         id="brother"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -454,7 +455,6 @@ const ProductsPage = async ({
                         id="cisco"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -705,7 +705,6 @@ const ProductsPage = async ({
                         id="emi"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -763,7 +762,6 @@ const ProductsPage = async ({
                         id="fitbit"
                         type="checkbox"
                         value=""
-                        
                         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                       />
 
@@ -935,7 +933,6 @@ const ProductsPage = async ({
                           type="radio"
                           value=""
                           name="list-radio"
-                          
                           className="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-primary-600"
                         />
                         <label
@@ -1031,7 +1028,6 @@ const ProductsPage = async ({
                           id="green"
                           type="checkbox"
                           value=""
-                          
                           className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
 
@@ -1066,7 +1062,6 @@ const ProductsPage = async ({
                           id="red"
                           type="checkbox"
                           value=""
-                          
                           className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
 
@@ -1222,7 +1217,6 @@ const ProductsPage = async ({
                           type="radio"
                           value=""
                           name="rating"
-                          
                           className="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
                         <label
@@ -1442,7 +1436,6 @@ const ProductsPage = async ({
                           id="1-1-5-kg"
                           type="checkbox"
                           value=""
-                          
                           className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-primary-600"
                         />
 
@@ -1522,7 +1515,6 @@ const ProductsPage = async ({
                         name="delivery"
                         value="delivery-usa"
                         className="peer hidden"
-                        
                       />
                       <label
                         htmlFor="delivery-usa"
@@ -1563,7 +1555,6 @@ const ProductsPage = async ({
                         name="delivery"
                         value="delivery-asia"
                         className="peer hidden"
-                        
                       />
                       <label
                         htmlFor="delivery-asia"

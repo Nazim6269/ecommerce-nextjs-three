@@ -2,10 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+export type ProductVariantType = {
+  choices: { Size: string; Color: string };
+  stock: { inStock: boolean };
+};
+
 export type ProductCardType = {
   name: string;
   _id: string;
   description: string;
+  stock: { inStock: boolean };
+  variants: ProductVariantType[];
   priceData: {
     currency: string;
     price: number;

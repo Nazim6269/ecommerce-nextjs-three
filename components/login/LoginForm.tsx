@@ -22,6 +22,7 @@ const LoginForm = () => {
         setError(res.message);
       }
     } catch (error) {
+      console.log(error);
       setError("something went wrong");
     } finally {
       setLoading(false);
@@ -30,6 +31,7 @@ const LoginForm = () => {
   return (
     <form className="mt-6" onSubmit={handleSubmit}>
       {/* Email */}
+      {error && <span>{error}</span>}
       <div className="mb-4">
         <label
           htmlFor="email"
@@ -70,7 +72,7 @@ const LoginForm = () => {
         type="submit"
         className="w-full py-2 mt-4 bg-black text-white font-medium rounded-lg "
       >
-        Login
+        {loading ? "Submitting..." : "Login"}
       </button>
       <SocialLogin />
 

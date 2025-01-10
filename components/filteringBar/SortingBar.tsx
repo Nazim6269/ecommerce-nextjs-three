@@ -1,5 +1,3 @@
-import React from "react";
-
 const SortingBar = () => {
   return (
     <div className="flex items-center space-x-4">

@@ -10,11 +10,12 @@ export const GET = async (req: NextRequest) => {
       .queryProducts()
       .eq("slug", params)
       .find();
-    console.log(data, "routes");
+
     const product = data?.items[0] || null;
 
     return NextResponse.json(product, { status: 200 });
   } catch (error) {
+    console.log(error);
     return NextResponse.json(
       { error: "Failed to fetch product" },
       { status: 500 }

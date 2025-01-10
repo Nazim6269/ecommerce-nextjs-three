@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const OrderSummary = () => {
   return (
     <div>
@@ -44,12 +46,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
                               alt="imac image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
                               alt="imac image"
@@ -77,12 +83,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
                               alt="imac image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg"
                               alt="imac image"
@@ -110,12 +120,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ipad-light.svg"
                               alt="ipad image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ipad-dark.svg"
                               alt="ipad image"
@@ -143,12 +157,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/xbox-light.svg"
                               alt="xbox image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/xbox-dark.svg"
                               alt="xbox image"
@@ -176,12 +194,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-light.svg"
                               alt="playstation image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-dark.svg"
                               alt="playstation image"
@@ -209,12 +231,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/macbook-pro-light.svg"
                               alt="macbook image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/macbook-pro-dark.svg"
                               alt="macbook image"
@@ -242,12 +268,16 @@ const OrderSummary = () => {
                             href="#"
                             className="flex items-center aspect-square w-10 h-10 shrink-0"
                           >
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="h-auto w-full max-h-full dark:hidden"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-light.svg"
                               alt="watch image"
                             />
-                            <img
+                            <Image
+                              width={300}
+                              height={150}
                               className="hidden h-auto w-full max-h-full dark:block"
                               src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-dark.svg"
                               alt="watch image"

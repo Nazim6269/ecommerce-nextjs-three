@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const AccountOverview = () => {
   return (
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-8">
@@ -341,10 +343,12 @@ const AccountOverview = () => {
           <div className="mb-4 grid gap-4 sm:grid-cols-2 sm:gap-8 lg:gap-16">
             <div className="space-y-4">
               <div className="flex space-x-4">
-                <img
+                <Image
                   className="h-16 w-16 rounded-lg"
                   src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
                   alt="Helene avatar"
+                  width={200}
+                  height={200}
                 />
                 <div>
                   <span className="mb-2 inline-block rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">
@@ -463,12 +467,12 @@ const AccountOverview = () => {
                 </dt>
                 <dd className="flex items-center space-x-4 text-gray-500 dark:text-gray-400">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
-                    <img
+                    <Image
                       className="h-4 w-auto dark:hidden"
                       src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa.svg"
                       alt=""
                     />
-                    <img
+                    <Image
                       className="hidden h-4 w-auto dark:flex"
                       src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/brand-logos/visa-dark.svg"
                       alt=""
