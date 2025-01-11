@@ -4,7 +4,7 @@ import React from "react";
 
 export type ProductVariantType = {
   choices: { Size: string; Color: string };
-  stock: { inStock: boolean };
+  stock: { inStock: boolean; quantity: number };
 };
 
 export type ProductCardType = {
