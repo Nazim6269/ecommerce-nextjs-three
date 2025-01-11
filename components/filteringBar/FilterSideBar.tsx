@@ -1,4 +1,10 @@
-const FilterSidebar = () => {
+import { baseUrl } from "@/secret";
+import CategoryFilter from "./CategoryFilter";
+
+const FilterSidebar = async () => {
+  const res = await fetch(`${baseUrl}/api/categories`);
+  let categories = await res.json();
+  categories = categories._items;
   return (
     <div className="w-64 bg-white shadow-lg rounded-lg p-6">
       {/* Filter Header */}
@@ -7,32 +13,8 @@ const FilterSidebar = () => {
       {/* Categories Section */}
       <div className="mb-6">
         <h3 className="text-lg font-medium text-gray-700 mb-3">Categories</h3>
-        <ul className="space-y-2">
-          <li>
-            <label className="flex items-center text-gray-600">
-              <input type="checkbox" className="w-4 h-4 text-blue-500 mr-2" />
-              Electronics
-            </label>
-          </li>
-          <li>
-            <label className="flex items-center text-gray-600">
-              <input type="checkbox" className="w-4 h-4 text-blue-500 mr-2" />
-              Fashion
-            </label>
-          </li>
-          <li>
-            <label className="flex items-center text-gray-600">
-              <input type="checkbox" className="w-4 h-4 text-blue-500 mr-2" />
-              Home Appliances
-            </label>
-          </li>
-          <li>
-            <label className="flex items-center text-gray-600">
-              <input type="checkbox" className="w-4 h-4 text-blue-500 mr-2" />
-              Books
-            </label>
-          </li>
-        </ul>
+
+        <CategoryFilter categories={categories} />
       </div>
 
       {/* Price Range Section */}
