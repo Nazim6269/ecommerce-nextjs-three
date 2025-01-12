@@ -43,7 +43,7 @@ const CategoryFilter: React.FC<{ categories: CategoriesType[] }> = ({
   };
   return (
     <ul className="space-y-2">
-      {categories?.map((category) => (
+      {categories.slice(1)?.map((category) => (
         <li key={category.name}>
           <label className="flex capitalize items-center text-gray-600">
             <input

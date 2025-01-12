@@ -17,11 +17,12 @@ const ProductsPage = async ({
   searchParams: SearchParams;
 }) => {
   const resolvedParams = await searchParams;
-  const slugParam = resolvedParams.category;
+  const queryCategoryParam = resolvedParams.category;
+  const querySortParam = resolvedParams.sort;
 
-  const category = Array.isArray(slugParam)
-    ? slugParam[0]
-    : slugParam?.toLocaleLowerCase();
+  const category = Array.isArray(queryCategoryParam)
+    ? queryCategoryParam[0]
+    : queryCategoryParam?.toLocaleLowerCase();
   const categoryArray = category?.split(",");
 
   const categoryParams =
@@ -32,7 +33,6 @@ const ProductsPage = async ({
   );
   let products = await res.json();
   products = products._items;
-  console.log(categoryArray);
 
   let filteredData: ProductCardType[] = [];
 
@@ -49,7 +49,22 @@ const ProductsPage = async ({
           });
   }
 
-  console.log(filteredData, "filteredData");
+  switch (querySortParam) {
+    case "increasing-price":
+      filteredData = filteredData.sort(
+        (a, b) => a.priceData.price - b.priceData.price
+      );
+      break;
+    case "decreasing-price":
+      filteredData = filteredData.sort(
+        (a, b) => b.priceData.price - a.priceData.price
+      );
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <section className="bg-gray-50 antialiased dark:bg-gray-900 ">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
@@ -61,20 +76,21 @@ const ProductsPage = async ({
               {category ? category : "all-products"}
             </h2>
           </div>
+          {/* =================sorting bar============ */}
           <SortingBar />
         </div>
         <div className="flex gap-2">
+          {/* ==========filter bar============= */}
           <div>
             <FilterSidebar />
           </div>
           {/* all products section */}
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-3">
             {filteredData?.map((product: ProductCardType) => (
-              <ProductCard
-                product={product}
-                key={product._id}
-                category={categoryParams}
-              />
+              <div className="h-auto" key={product._id}>
+                {" "}
+                <ProductCard product={product} category={categoryParams} />
+              </div>
             ))}
           </div>
         </div>
