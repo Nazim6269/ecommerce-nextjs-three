@@ -5,3 +5,4 @@ export const fbId = process.env.FB_ID;
 export const fbSecret = process.env.FB_SECRET;
 export const wixClientId = process.env.NEXT_PUBLIC_WIX_CLIENT_ID!;
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+export const productsPerPage = 5;
