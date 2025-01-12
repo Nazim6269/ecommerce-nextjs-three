@@ -10,6 +10,7 @@ export type ProductVariantType = {
 export type ProductCardType = {
   name: string;
   _id: string;
+  slug?: string;
   description: string;
   stock: { inStock: boolean };
   variants: ProductVariantType[];

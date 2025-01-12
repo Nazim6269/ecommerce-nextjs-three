@@ -18,16 +18,38 @@ const ProductsPage = async ({
 }) => {
   const resolvedParams = await searchParams;
   const slugParam = resolvedParams.category;
-  const category = Array.isArray(slugParam) ? slugParam[0] : slugParam;
 
-  const categoryParams = category || "all-products";
+  const category = Array.isArray(slugParam)
+    ? slugParam[0]
+    : slugParam?.toLocaleLowerCase();
+  const categoryArray = category?.split(",");
+
+  const categoryParams =
+    categoryArray?.length! < 2 ? categoryArray?.[0] : "all-products";
 
   const res = await fetch(
     `http://localhost:3000/api/products?category=${categoryParams}`
   );
   let products = await res.json();
   products = products._items;
+  console.log(categoryArray);
 
+  let filteredData: ProductCardType[] = [];
+
+  if (!categoryArray) {
+    filteredData = products;
+  } else {
+    filteredData =
+      categoryArray?.length! < 2
+        ? products
+        : products.filter((product: ProductCardType) => {
+            return categoryArray?.some((category) =>
+              product.slug?.toLowerCase().includes(category.toLowerCase())
+            );
+          });
+  }
+
+  console.log(filteredData, "filteredData");
   return (
     <section className="bg-gray-50 antialiased dark:bg-gray-900 ">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
@@ -47,7 +69,7 @@ const ProductsPage = async ({
           </div>
           {/* all products section */}
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-3">
-            {products?.map((product: ProductCardType) => (
+            {filteredData?.map((product: ProductCardType) => (
               <ProductCard
                 product={product}
                 key={product._id}

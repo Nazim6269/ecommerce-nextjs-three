@@ -25,11 +25,11 @@ const CategoryFilter: React.FC<{ categories: CategoriesType[] }> = ({
     if (checked) {
       if (!currentCategories.includes(category)) {
         currentCategories.push(category);
-      } else {
-        const index = currentCategories.indexOf(category);
-        if (index > -1) {
-          currentCategories.splice(index, 1);
-        }
+      }
+    } else {
+      const index = currentCategories.indexOf(category);
+      if (index > -1) {
+        currentCategories.splice(index, 1);
       }
     }
 
