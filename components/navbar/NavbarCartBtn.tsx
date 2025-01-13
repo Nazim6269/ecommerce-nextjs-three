@@ -156,7 +156,8 @@ const NavbarBtn = () => {
           </div>
 
           <Link
-            href="#"
+            href="/checkout"
+            onClick={() => setIsModalOpen(false)}
             title=""
             aria-label="go to  checkout"
             className="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white "

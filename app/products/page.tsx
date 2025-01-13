@@ -32,7 +32,8 @@ const ProductsPage = async ({
     categoryArray?.length! < 2 ? categoryArray?.[0] : "all-products";
 
   const res = await fetch(
-    `http://localhost:3000/api/products?category=${categoryParams}`
+    `http://localhost:3000/api/products?category=${categoryParams}`,
+    { cache: "force-cache" }
   );
   let products = await res.json();
   products = products._items;

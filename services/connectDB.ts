@@ -8,10 +8,16 @@ interface ConnectDBResponse {
 
 export const connectDB = async (): Promise<ConnectDBResponse> => {
   try {
-    mongoose.connect(mongoUrl);
-    console.log("DB connected Successfully");
-    return { success: true, message: "DB connected Successfully" };
-  } catch (error) {
-    return { success: false, message: "Something went wrong" };
+    await mongoose.connect(mongoUrl);
+
+    console.log("DB connected successfully");
+    return { success: true, message: "DB connected successfully" };
+  } catch (error: any) {
+    console.error("DB connection error:", error.message);
+
+    return {
+      success: false,
+      message: `DB connection error: ${error.message}`,
+    };
   }
 };

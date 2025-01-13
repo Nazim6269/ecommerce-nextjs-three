@@ -1,13 +1,12 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const SortingBar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const searchParams = useSearchParams();
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleSort = (e: React.MouseEvent<HTMLElement>) => {
     const params = new URLSearchParams(searchParams);

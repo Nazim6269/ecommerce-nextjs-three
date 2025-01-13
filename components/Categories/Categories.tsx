@@ -37,7 +37,7 @@ const Categories = async () => {
               <Image
                 src={item?.media?.mainMedia?.image?.url || "/fallback.png"}
                 alt="category image"
-                width={52}
+                width={22}
                 height={12}
               />
               <span className="text-sm capitalize font-medium text-gray-900 dark:text-white ml-2">

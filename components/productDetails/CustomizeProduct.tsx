@@ -38,8 +38,8 @@ const CustomizeProduct: React.FC<{ variants: ProductVariantType[] }> = ({
   };
 
   // Generate size and color arrays
-  let sizeArray: string[] = [];
-  let colorArray: string[] = [];
+  const sizeArray: string[] = [];
+  const colorArray: string[] = [];
   variants.forEach((variant) => {
     const size = variant.choices.Size;
     const color = variant.choices.Color;
